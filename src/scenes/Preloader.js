@@ -2,36 +2,6 @@ import { Scene } from "phaser";
 import fontPng from "../../public/assets/font/font.png";
 import fontXml from "../../public/assets/font/font.xml";
 
-import bgImg1 from "../../public/assets/images/background.png";
-import bgImg2 from "../../public/assets/images/background-2.png";
-import bgImg3 from "../../public/assets/images/background-3.png";
-import beamImg from "../../public/assets/images/beam.png";
-
-import explosionImg from "../../public/assets/spritesheets/explosion.png";
-import playerImg from "../../public/assets/spritesheets/player.png";
-import expUpImg from "../../public/assets/spritesheets/expUp.png";
-import mobImg1 from "../../public/assets/spritesheets/mob1.png";
-import mobImg2 from "../../public/assets/spritesheets/mob2.png";
-import mobImg3 from "../../public/assets/spritesheets/mob3.png";
-import mobImg4 from "../../public/assets/spritesheets/mob4.png";
-import lionImg from "../../public/assets/spritesheets/lion.png";
-import catnipImg from "../../public/assets/spritesheets/catnip.png";
-import clawWhiteImg from "../../public/assets/spritesheets/claw-white.png";
-import clawYellowImg from "../../public/assets/spritesheets/claw-yellow.png";
-
-import beamOgg from "../../public/assets/sounds/beam.ogg";
-import scratchOgg from "../../public/assets/sounds/scratch.ogg";
-import hitMobOgg from "../../public/assets/sounds/hitMob.ogg";
-import growlOgg from "../../public/assets/sounds/growl.ogg";
-import explosionOgg from "../../public/assets/sounds/explosion.ogg";
-import hurtOgg from "../../public/assets/sounds/hurt.ogg";
-import expUpOgg from "../../public/assets/sounds/expUp.ogg";
-import nextLevelOgg from "../../public/assets/sounds/nextLevel.ogg";
-import gameOverOgg from "../../public/assets/sounds/gameover.ogg";
-import gameClearOgg from "../../public/assets/sounds/gameClear.ogg";
-import pauseInOgg from "../../public/assets/sounds/pauseIn.ogg";
-import pauseOutOgg from "../../public/assets/sounds/pauseOut.ogg";
-
 export class Preloader extends Scene {
     constructor() {
         super("Preloader");
@@ -56,79 +26,78 @@ export class Preloader extends Scene {
 
     preload() {
         //  게임 assets을 로드합니다 - 자신의 assets으로 교체하세요.
-        this.load.setPath("assets");
+        this.load.setPath("assets/");
 
         // this.load.image("logo", "logo.png");
 
         // IMAGES
-        this.load.image(bgImg1, "/images/background1");
-        this.load.image(bgImg2, "/images/background2");
-        this.load.image(bgImg3, "/images/background3");
-        this.load.image(beamImg, "/images/beam");
+        this.load.image("bgImg1", "images/background1.png");
+        this.load.image("bgImg2", "images/background2.png");
+        this.load.image("bgImg3", "images/background3.png");
+        this.load.image("beamImg", "images/beam.png");
 
         // SPRITESHEETS
-        this.load.spritesheet(playerImg, "/spritesheets/player", {
+        this.load.spritesheet("playerImg", "spritesheets/player.png", {
             frameWidth: 32,
             frameHeight: 36,
         });
-        this.load.spritesheet(mobImg1, "/spritesheets/mob1", {
+        this.load.spritesheet("mobImg1", "spritesheets/mob1.png", {
             frameWidth: 28,
             frameHeight: 28,
         });
-        this.load.spritesheet(mobImg2, "/spritesheets/mob2", {
+        this.load.spritesheet("mobImg2", "spritesheets/mob2.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet(mobImg3, "/spritesheets/mob3", {
+        this.load.spritesheet("mobImg3", "spritesheets/mob3.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet(mobImg4, "/spritesheets/mob4", {
+        this.load.spritesheet("mobImg4", "spritesheets/mob4.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet(lionImg, "/spritesheets/lion", {
+        this.load.spritesheet("lionImg", "spritesheets/lion.png", {
             frameWidth: 48,
             frameHeight: 64,
         });
-        this.load.spritesheet(explosionImg, "/spritesheets/explosion", {
+        this.load.spritesheet("explosionImg", "spritesheets/explosion.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet(clawWhiteImg, "/spritesheets/claw_white", {
+        this.load.spritesheet("clawWhiteImg", "spritesheets/claw-white.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet(clawYellowImg, "/spritesheets/claw_yellow", {
+        this.load.spritesheet("clawYellowImg", "spritesheets/claw-yellow.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet(catnipImg, "/spritesheets/catnip", {
+        this.load.spritesheet("catnipImg", "spritesheets/catnip.png", {
             frameWidth: 64,
             frameHeight: 64,
         });
-        this.load.spritesheet(expUpImg, "/spritesheets/exp-up", {
+        this.load.spritesheet("expUpImg", "spritesheets/expUp.png", {
             frameWidth: 16,
             frameHeight: 16,
         });
 
         // AUDIOS
-        // AUDIOS
-        this.load.audio("beam", [beamOgg]);
-        this.load.audio("scratch", [scratchOgg]);
-        this.load.audio("hitMob", [hitMobOgg]);
-        this.load.audio("growl", [growlOgg]);
-        this.load.audio("explosion", [explosionOgg]);
-        this.load.audio("expUp", [expUpOgg]);
-        this.load.audio("hurt", [hurtOgg]);
-        this.load.audio("nextLevel", [nextLevelOgg]);
-        this.load.audio("gameOver", [gameOverOgg]);
-        this.load.audio("gameClear", [gameClearOgg]);
-        this.load.audio("pauseIn", [pauseInOgg]);
-        this.load.audio("pauseOut", [pauseOutOgg]);
+        this.load.audio("beam", ["sounds/beam.ogg"]);
+        this.load.audio("scratch", ["sounds/scratch.ogg"]);
+        this.load.audio("hitMob", ["sounds/hitMob.ogg"]);
+        this.load.audio("growl", ["sounds/growl.ogg"]);
+        this.load.audio("explosion", ["sounds/explosion.ogg"]);
+        this.load.audio("expUp", ["sounds/expUp.ogg"]);
+        this.load.audio("hurt", ["sounds/hurt.ogg"]);
+        this.load.audio("nextLevel", ["sounds/nextLevel.ogg"]);
+        this.load.audio("gameOver", ["sounds/gameover.ogg"]);
+        this.load.audio("gameClear", ["sounds/gameClear.ogg"]);
+        this.load.audio("pauseIn", ["sounds/pauseIn.ogg"]);
+        this.load.audio("pauseOut", ["sounds/pauseOut.ogg"]);
 
         // FONT
-        this.load.bitmapFont(fontPng, "/font/pixelFont", fontXml);
+        this.load.bitmapFont("fontPng", "/font/font.png", "font/font.xml");
     }
 
     create() {
