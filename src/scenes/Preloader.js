@@ -113,18 +113,19 @@ export class Preloader extends Scene {
         });
 
         // AUDIOS
-        this.load.audio(beamOgg, "/sounds/audio_beam");
-        this.load.audio(scratchOgg, "/sounds/audio_scratch");
-        this.load.audio(hitMobOgg, "/sounds/audio_hitMob");
-        this.load.audio(growlOgg, "/sounds/audio_growl");
-        this.load.audio(explosionOgg, "/sounds/audio_explosion");
-        this.load.audio(expUpOgg, "/sounds/audio_expUp");
-        this.load.audio(hurtOgg, "/sounds/audio_hurt");
-        this.load.audio(nextLevelOgg, "/sounds/audio_nextLevel");
-        this.load.audio(gameOverOgg, "/sounds/audio_gameOver");
-        this.load.audio(gameClearOgg, "/sounds/audio_gameClear");
-        this.load.audio(pauseInOgg, "/sounds/audio_pauseIn");
-        this.load.audio(pauseOutOgg, "/sounds/audio_pauseOut");
+        // AUDIOS
+        this.load.audio("beam", [beamOgg]);
+        this.load.audio("scratch", [scratchOgg]);
+        this.load.audio("hitMob", [hitMobOgg]);
+        this.load.audio("growl", [growlOgg]);
+        this.load.audio("explosion", [explosionOgg]);
+        this.load.audio("expUp", [expUpOgg]);
+        this.load.audio("hurt", [hurtOgg]);
+        this.load.audio("nextLevel", [nextLevelOgg]);
+        this.load.audio("gameOver", [gameOverOgg]);
+        this.load.audio("gameClear", [gameClearOgg]);
+        this.load.audio("pauseIn", [pauseInOgg]);
+        this.load.audio("pauseOut", [pauseOutOgg]);
 
         // FONT
         this.load.bitmapFont(fontPng, "/font/pixelFont", fontXml);
@@ -133,6 +134,132 @@ export class Preloader extends Scene {
     create() {
         //  모든 자산이 로드되면, 나머지 게임에서 사용할 수 있는 전역 객체를 여기에서 생성하는 것이 종종 유용합니다.
         //  예를 들어, 다른 씬에서 사용할 수 있도록 전역 애니메이션을 여기에서 정의할 수 있습니다.
+        // MOBS
+        this.anims.create({
+            key: "mob1_anim",
+            frames: this.anims.generateFrameNumbers("mob1"),
+            frameRate: 12,
+            repeat: -1,
+        });
+        this.anims.create({
+            key: "mob2_anim",
+            frames: this.anims.generateFrameNumbers("mob2"),
+            frameRate: 12,
+            repeat: -1,
+        });
+        this.anims.create({
+            key: "mob3_anim",
+            frames: this.anims.generateFrameNumbers("mob3"),
+            frameRate: 12,
+            repeat: -1,
+        });
+        this.anims.create({
+            key: "mob4_anim",
+            frames: this.anims.generateFrameNumbers("mob4"),
+            frameRate: 12,
+            repeat: -1,
+        });
+        this.anims.create({
+            key: "lion_anim",
+            frames: this.anims.generateFrameNumbers("lion"),
+            frameRate: 12,
+            repeat: -1,
+        });
+        this.anims.create({
+            key: "lion_idle",
+            frames: this.anims.generateFrameNumbers("lion", {
+                start: 0,
+                end: 0,
+            }),
+            frameRate: 1,
+            repeat: 0,
+        });
+
+        // PLAYERS
+        this.anims.create({
+            key: "player_anim",
+            frames: this.anims.generateFrameNumbers("player"),
+            frameRate: 12,
+            repeat: -1,
+        });
+        this.anims.create({
+            key: "player_idle",
+            frames: this.anims.generateFrameNumbers("player", {
+                start: 0,
+                end: 0,
+            }),
+            frameRate: 1,
+            repeat: 0,
+        });
+
+        // EFFECT
+        this.anims.create({
+            key: "explode",
+            frames: this.anims.generateFrameNumbers("explosion"),
+            frameRate: 20,
+            repeat: 0,
+            hideOnComplete: true,
+        });
+
+        // ATTACKS
+        this.anims.create({
+            key: "scratch_white",
+            frames: this.anims.generateFrameNumbers("claw_white"),
+            frameRate: 20,
+            repeat: 0,
+            hideOnComplete: true,
+        });
+        this.anims.create({
+            key: "scratch_yellow",
+            frames: this.anims.generateFrameNumbers("claw_yellow"),
+            frameRate: 20,
+            repeat: 0,
+            hideOnComplete: true,
+        });
+        this.anims.create({
+            key: "catnip_anim",
+            frames: this.anims.generateFrameNumbers("catnip"),
+            frameRate: 20,
+            repeat: -1,
+        });
+
+        // EXP UP ITEMS
+        this.anims.create({
+            key: "red",
+            frames: this.anims.generateFrameNumbers("exp-up", {
+                start: 0,
+                end: 0,
+            }),
+            frameRate: 20,
+            repeat: 0,
+        });
+        this.anims.create({
+            key: "blue",
+            frames: this.anims.generateFrameNumbers("exp-up", {
+                start: 1,
+                end: 1,
+            }),
+            frameRate: 20,
+            repeat: 0,
+        });
+        this.anims.create({
+            key: "yellow",
+            frames: this.anims.generateFrameNumbers("exp-up", {
+                start: 2,
+                end: 2,
+            }),
+            frameRate: 20,
+            repeat: 0,
+        });
+        this.anims.create({
+            key: "green",
+            frames: this.anims.generateFrameNumbers("exp-up", {
+                start: 3,
+                end: 3,
+            }),
+            frameRate: 20,
+            repeat: 0,
+        });
 
         //  메인 메뉴로 이동합니다. 카메라 페이드와 같은 씬 전환으로 교체할 수도 있습니다.
         this.scene.start("MainMenu");
