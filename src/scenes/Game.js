@@ -1,6 +1,8 @@
 import { Scene } from "phaser";
 import Player from "../characters/Player";
 import { setBackground } from "../utils/backgroundManager";
+import Config from "../Config";
+// import { ConstraintFactory } from "matter";
 
 export class Game extends Scene {
     constructor() {
@@ -41,7 +43,11 @@ export class Game extends Scene {
         this.m_pauseInSound = this.sound.add("pauseIn");
         this.m_pauseOutSound = this.sound.add("pauseOut");
 
+        /** Player */
         this.m_player = new Player(this);
+
+        // camera가 player를 따라 이동 - player가 화면 가운데로 고정
+        this.cameras.main.startFollow(this.m_player);
 
         setBackground(this, "background");
 
@@ -54,6 +60,14 @@ export class Game extends Scene {
 
     update() {
         this.movePlayerManager();
+
+        /** camera가 가는 곳으로 background가 따라 움직이도록 해줌 */
+        this.m_background.setX(this.m_player.x - Config.width / 2);
+        this.m_background.setY(this.m_player.y - Config.height / 2);
+
+        /** tilePostition을 player가 움직이는 만큼 이동시켜 마치 무한 배경인 것처럼 나타내줌 */
+        this.m_background.tilePositionX = this.m_player.x - Config.width / 2;
+        this.m_background.tilePositionY = this.m_player.y - Config.height / 2;
     }
 
     // Player 이동 메소드
@@ -69,7 +83,6 @@ export class Game extends Scene {
             this.m_cursorKeys.down.isDown
         ) {
             if (!this.m_player.m_moving) {
-                console.log("if(!this.m_player.m_moving");
                 this.m_player.play("player_anim");
             }
             this.m_player.m_moving = true;
