@@ -1,6 +1,4 @@
 import { Scene } from "phaser";
-import fontPng from "../../public/assets/font/font.png";
-import fontXml from "../../public/assets/font/font.xml";
 
 export class Preloader extends Scene {
     constructor() {
@@ -41,19 +39,19 @@ export class Preloader extends Scene {
             frameWidth: 32,
             frameHeight: 36,
         });
-        this.load.spritesheet("mobImg1", "spritesheets/mob1.png", {
+        this.load.spritesheet("mob1Img", "spritesheets/mob1.png", {
             frameWidth: 28,
             frameHeight: 28,
         });
-        this.load.spritesheet("mobImg2", "spritesheets/mob2.png", {
+        this.load.spritesheet("mob2Img", "spritesheets/mob2.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet("mobImg3", "spritesheets/mob3.png", {
+        this.load.spritesheet("mob3Img", "spritesheets/mob3.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet("mobImg4", "spritesheets/mob4.png", {
+        this.load.spritesheet("mob4Img", "spritesheets/mob4.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
@@ -106,37 +104,37 @@ export class Preloader extends Scene {
         // MOBS
         this.anims.create({
             key: "mob1_anim",
-            frames: this.anims.generateFrameNumbers("mob1"),
+            frames: this.anims.generateFrameNumbers("mob1Img"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "mob2_anim",
-            frames: this.anims.generateFrameNumbers("mob2"),
+            frames: this.anims.generateFrameNumbers("mob2Img"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "mob3_anim",
-            frames: this.anims.generateFrameNumbers("mob3"),
+            frames: this.anims.generateFrameNumbers("mob3Img"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "mob4_anim",
-            frames: this.anims.generateFrameNumbers("mob4"),
+            frames: this.anims.generateFrameNumbers("mob4Img"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "lion_anim",
-            frames: this.anims.generateFrameNumbers("lion"),
+            frames: this.anims.generateFrameNumbers("lionImg"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "lion_idle",
-            frames: this.anims.generateFrameNumbers("lion", {
+            frames: this.anims.generateFrameNumbers("lionImg", {
                 start: 0,
                 end: 0,
             }),
@@ -147,13 +145,13 @@ export class Preloader extends Scene {
         // PLAYERS
         this.anims.create({
             key: "player_anim",
-            frames: this.anims.generateFrameNumbers("player"),
+            frames: this.anims.generateFrameNumbers("playerImg"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "player_idle",
-            frames: this.anims.generateFrameNumbers("player", {
+            frames: this.anims.generateFrameNumbers("playerImg", {
                 start: 0,
                 end: 0,
             }),
@@ -164,7 +162,7 @@ export class Preloader extends Scene {
         // EFFECT
         this.anims.create({
             key: "explode",
-            frames: this.anims.generateFrameNumbers("explosion"),
+            frames: this.anims.generateFrameNumbers("explosionImg"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true,
@@ -173,21 +171,21 @@ export class Preloader extends Scene {
         // ATTACKS
         this.anims.create({
             key: "scratch_white",
-            frames: this.anims.generateFrameNumbers("claw_white"),
+            frames: this.anims.generateFrameNumbers("clawWhiteImg"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true,
         });
         this.anims.create({
             key: "scratch_yellow",
-            frames: this.anims.generateFrameNumbers("claw_yellow"),
+            frames: this.anims.generateFrameNumbers("clawYellowImg"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true,
         });
         this.anims.create({
             key: "catnip_anim",
-            frames: this.anims.generateFrameNumbers("catnip"),
+            frames: this.anims.generateFrameNumbers("catnipImg"),
             frameRate: 20,
             repeat: -1,
         });
@@ -195,7 +193,7 @@ export class Preloader extends Scene {
         // EXP UP ITEMS
         this.anims.create({
             key: "red",
-            frames: this.anims.generateFrameNumbers("exp-up", {
+            frames: this.anims.generateFrameNumbers("expUpImg", {
                 start: 0,
                 end: 0,
             }),
@@ -204,7 +202,7 @@ export class Preloader extends Scene {
         });
         this.anims.create({
             key: "blue",
-            frames: this.anims.generateFrameNumbers("exp-up", {
+            frames: this.anims.generateFrameNumbers("expUpImg", {
                 start: 1,
                 end: 1,
             }),
@@ -213,7 +211,7 @@ export class Preloader extends Scene {
         });
         this.anims.create({
             key: "yellow",
-            frames: this.anims.generateFrameNumbers("exp-up", {
+            frames: this.anims.generateFrameNumbers("expUpImg", {
                 start: 2,
                 end: 2,
             }),
@@ -222,7 +220,7 @@ export class Preloader extends Scene {
         });
         this.anims.create({
             key: "green",
-            frames: this.anims.generateFrameNumbers("exp-up", {
+            frames: this.anims.generateFrameNumbers("expUpImg", {
                 start: 3,
                 end: 3,
             }),
