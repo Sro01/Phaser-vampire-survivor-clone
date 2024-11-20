@@ -29,53 +29,57 @@ export class Preloader extends Scene {
         // this.load.image("logo", "logo.png");
 
         // IMAGES
-        this.load.image("bgImg1", "images/background1.png");
-        this.load.image("bgImg2", "images/background2.png");
-        this.load.image("bgImg3", "images/background3.png");
-        this.load.image("beamImg", "images/beam.png");
+        this.load.image("bg1", "images/background1.png");
+        this.load.image("bg2", "images/background2.png");
+        this.load.image("bg3", "images/background3.png");
+        this.load.image("beam", "images/beam.png");
 
         // SPRITESHEETS
-        this.load.spritesheet("playerImg", "spritesheets/player.png", {
+        this.load.spritesheet("player", "spritesheets/player.png", {
             frameWidth: 32,
             frameHeight: 36,
         });
-        this.load.spritesheet("mob1Img", "spritesheets/mob1.png", {
+        this.load.spritesheet("other", "spritesheets/player.png", {
+            frameWidth: 32,
+            frameHeight: 36,
+        });
+        this.load.spritesheet("mob1", "spritesheets/mob1.png", {
             frameWidth: 28,
             frameHeight: 28,
         });
-        this.load.spritesheet("mob2Img", "spritesheets/mob2.png", {
+        this.load.spritesheet("mob2", "spritesheets/mob2.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet("mob3Img", "spritesheets/mob3.png", {
+        this.load.spritesheet("mob3", "spritesheets/mob3.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet("mob4Img", "spritesheets/mob4.png", {
+        this.load.spritesheet("mob4", "spritesheets/mob4.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet("lionImg", "spritesheets/lion.png", {
+        this.load.spritesheet("lion", "spritesheets/lion.png", {
             frameWidth: 48,
             frameHeight: 64,
         });
-        this.load.spritesheet("explosionImg", "spritesheets/explosion.png", {
+        this.load.spritesheet("explosion", "spritesheets/explosion.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet("clawWhiteImg", "spritesheets/claw-white.png", {
+        this.load.spritesheet("clawWhite", "spritesheets/claw-white.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet("clawYellowImg", "spritesheets/claw-yellow.png", {
+        this.load.spritesheet("clawYellow", "spritesheets/claw-yellow.png", {
             frameWidth: 32,
             frameHeight: 32,
         });
-        this.load.spritesheet("catnipImg", "spritesheets/catnip.png", {
+        this.load.spritesheet("catnip", "spritesheets/catnip.png", {
             frameWidth: 64,
             frameHeight: 64,
         });
-        this.load.spritesheet("expUpImg", "spritesheets/expUp.png", {
+        this.load.spritesheet("expUp", "spritesheets/expUp.png", {
             frameWidth: 16,
             frameHeight: 16,
         });
@@ -104,37 +108,37 @@ export class Preloader extends Scene {
         // MOBS
         this.anims.create({
             key: "mob1_anim",
-            frames: this.anims.generateFrameNumbers("mob1Img"),
+            frames: this.anims.generateFrameNumbers("mob1"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "mob2_anim",
-            frames: this.anims.generateFrameNumbers("mob2Img"),
+            frames: this.anims.generateFrameNumbers("mob2"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "mob3_anim",
-            frames: this.anims.generateFrameNumbers("mob3Img"),
+            frames: this.anims.generateFrameNumbers("mob3"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "mob4_anim",
-            frames: this.anims.generateFrameNumbers("mob4Img"),
+            frames: this.anims.generateFrameNumbers("mob4"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "lion_anim",
-            frames: this.anims.generateFrameNumbers("lionImg"),
+            frames: this.anims.generateFrameNumbers("lion"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "lion_idle",
-            frames: this.anims.generateFrameNumbers("lionImg", {
+            frames: this.anims.generateFrameNumbers("lion", {
                 start: 0,
                 end: 0,
             }),
@@ -145,13 +149,13 @@ export class Preloader extends Scene {
         // PLAYERS
         this.anims.create({
             key: "player_anim",
-            frames: this.anims.generateFrameNumbers("playerImg"),
+            frames: this.anims.generateFrameNumbers("player"),
             frameRate: 12,
             repeat: -1,
         });
         this.anims.create({
             key: "player_idle",
-            frames: this.anims.generateFrameNumbers("playerImg", {
+            frames: this.anims.generateFrameNumbers("player", {
                 start: 0,
                 end: 0,
             }),
@@ -162,7 +166,7 @@ export class Preloader extends Scene {
         // EFFECT
         this.anims.create({
             key: "explode",
-            frames: this.anims.generateFrameNumbers("explosionImg"),
+            frames: this.anims.generateFrameNumbers("explosion"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true,
@@ -171,21 +175,21 @@ export class Preloader extends Scene {
         // ATTACKS
         this.anims.create({
             key: "scratch_white",
-            frames: this.anims.generateFrameNumbers("clawWhiteImg"),
+            frames: this.anims.generateFrameNumbers("clawWhite"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true,
         });
         this.anims.create({
             key: "scratch_yellow",
-            frames: this.anims.generateFrameNumbers("clawYellowImg"),
+            frames: this.anims.generateFrameNumbers("clawYellow"),
             frameRate: 20,
             repeat: 0,
             hideOnComplete: true,
         });
         this.anims.create({
             key: "catnip_anim",
-            frames: this.anims.generateFrameNumbers("catnipImg"),
+            frames: this.anims.generateFrameNumbers("catnip"),
             frameRate: 20,
             repeat: -1,
         });
@@ -193,7 +197,7 @@ export class Preloader extends Scene {
         // EXP UP ITEMS
         this.anims.create({
             key: "red",
-            frames: this.anims.generateFrameNumbers("expUpImg", {
+            frames: this.anims.generateFrameNumbers("expUp", {
                 start: 0,
                 end: 0,
             }),
@@ -202,7 +206,7 @@ export class Preloader extends Scene {
         });
         this.anims.create({
             key: "blue",
-            frames: this.anims.generateFrameNumbers("expUpImg", {
+            frames: this.anims.generateFrameNumbers("expUp", {
                 start: 1,
                 end: 1,
             }),
@@ -211,7 +215,7 @@ export class Preloader extends Scene {
         });
         this.anims.create({
             key: "yellow",
-            frames: this.anims.generateFrameNumbers("expUpImg", {
+            frames: this.anims.generateFrameNumbers("expUp", {
                 start: 2,
                 end: 2,
             }),
@@ -220,7 +224,7 @@ export class Preloader extends Scene {
         });
         this.anims.create({
             key: "green",
-            frames: this.anims.generateFrameNumbers("expUpImg", {
+            frames: this.anims.generateFrameNumbers("expUp", {
                 start: 3,
                 end: 3,
             }),
@@ -229,6 +233,6 @@ export class Preloader extends Scene {
         });
 
         //  메인 메뉴로 이동합니다. 카메라 페이드와 같은 씬 전환으로 교체할 수도 있습니다.
-        this.scene.start("MainMenu");
+        this.scene.start("Game");
     }
 }

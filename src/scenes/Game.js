@@ -10,25 +10,11 @@ export class Game extends Scene {
     }
 
     create() {
-        this.cameras.main.setBackgroundColor(0x00ff00);
+        // this.cameras.main.setBackgroundColor(0x00ff00);
 
-        this.add.image(512, 384, "bgImg1").setAlpha(0.5);
+        // this.add.image(512, 384, "bg1").setAlpha(0.5);
 
-        this.add
-            .text(
-                512,
-                384,
-                "Make something fun!\nand share it with us:\nsupport@phaser.io",
-                {
-                    fontFamily: "Arial Black",
-                    fontSize: 38,
-                    color: "#ffffff",
-                    stroke: "#000000",
-                    strokeThickness: 8,
-                    align: "center",
-                }
-            )
-            .setOrigin(0.5);
+        //  The world is 3200 x 600 in size
 
         this.m_beamSound = this.sound.add("beam");
         this.m_scratchSound = this.sound.add("scratch");

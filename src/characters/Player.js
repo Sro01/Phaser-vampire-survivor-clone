@@ -8,12 +8,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         // 화면의 가운데에 player를 추가해줍니다.
         // scene.add.existing : scene에 오브젝트를 추가
         // scene.physics.add.existing : scene의 물리엔진에 오브젝트를 추가
-        super(scene, Config.width / 2, Config.height / 2, "playerImg");
+        super(scene, Config.width / 2, Config.height / 2, "player");
         scene.add.existing(this);
         scene.physics.add.existing(this);
 
         // scale 프로퍼티를 조절해 크기를 조절할 수 있습니다. (디폴트: 1)
-        this.scale = 2;
+        this.scale = 1;
 
         // depth를 조절해 어떤 오브젝트가 앞에 오고 뒤에 올지 설정할 수 있습니다.
         // CSS의 z-index와 비슷한 개념입니다. (디폴트: 0)

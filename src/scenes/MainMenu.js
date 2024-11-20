@@ -1,4 +1,5 @@
 import { Scene } from "phaser";
+import Config from "../Config";
 
 export class MainMenu extends Scene {
     constructor() {
@@ -6,10 +7,10 @@ export class MainMenu extends Scene {
     }
 
     create() {
-        this.add.image(512, 384, "bgImg1");
+        this.add.image(512, 384, "bg1");
 
         this.add
-            .text(512, 460, "Main Menu", {
+            .text(Config.width / 2, Config.height / 2, "Main Menu", {
                 fontFamily: "Arial Black",
                 fontSize: 38,
                 color: "#ffffff",
